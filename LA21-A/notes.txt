@@ -1,0 +1,52 @@
+
+# Entitäten
+Filiale
+- filialnr primay key (not null)
+- adresse
+
+#Fahrer
+- handynr
+- vorname
+- nachnamme
+- führerscheinklasse
+- fahrernr primary key
+
+# Lieferauftrag
+- start
+- ende
+- ausgeliefert
+- bestellnr
+- lieferadresse
+
+# E-Motoroller
+- versicherungskennzeichen
+- ladezeit
+- reichweite
+- motorollerID PRIMARY KEY 
+
+# Kleinwagen
+- kennzeichen
+- nächste HU
+- kleinwagenID PRIMARY KEY
+
+# Fahrzeug
+- fahrzeugNr PRIMARY KEY
+- kmStand
+- motorollerID FOREIGN KY
+- kleinwagenID FOREIN KEY
+# Relationen: 
+
+1:1
+Keine Vorhanden
+
+1:n 
+Jede Filiale hat verschiedene Fahrer && Jeder Fahrere hat verschiedene Filialen
+-> Eigene Entität (faehrt_fuer) wo die Fahrer ID und die Filial ID zusammen mit dem Tag in einer Reihe stehen
+
+n:m
+Jeder Fahrer hat keinen oder mehrer Lieferaufträge - Jeder Lieferauftrag hat einen Fahrer && Jeder Lieferauftrag hat ein Auto
+-> Lieferauftrag bekommt noch folgende Attribute dazu:
+	- Fahrzeug
+	- Fahrer
+-> Fahrer & Fahrzeug bekommt eine Spalte mit Lieferaufträgen, eine Liste an allen bestellnr die er gerade hat (wie gehen Listen)
+
